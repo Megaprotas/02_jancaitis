@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Experience it!</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  	<link rel="stylesheet" href="css/style.css">
+  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  	
+  	<script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init("user_FusldCCRgkGjUpWIhdw0c");
+    })();
+	</script>
+</head>
+<body>
+<div class="container-fluid">
+	<div class="row">
+		<div id="main-background">
+	 		<div class="bg-img">
+    			<img src="images/01bground.jpeg">
+   			</div>
+   			<div class="bg-img">
+     			<img src="images/02bground.jpg">
+   			</div>
+			<div class="bg-img">
+				<img src="images/03bground.jpg">
+			</div>
+			<div class="bg-img">
+				<img src="images/04bground.jpeg">
+			</div>
+		</div>
+	</div>
+
+	
+	<div class="row">
+		<div class="col-xs-12 col-sm-12 col-md-3 col-md-offset-2" id="search-form">
+			<select id='place-selector'>
+  				<option value="lodging">Hotel</option>
+  				<option value="cafe">Cafe</option>
+  				<option value="restaurant" selected>Restaurant</option>
+  				<option value="airport">Airport</option>
+  				<option value="casino">Casino</option>
+  				<option value="museum">Museum</option>
+  				<option value="night_club">Night_club</option>
+  				<option value="point_of_interest">Point of Interest</option>
+			</select>
+		</div>
+		<div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-4" id="city-search">
+			<input type="text" id="autocomplete" placeholder="Enter a city" name="cityname" autofocus="autofocus">
+		</div>
+    <div class="col-sm-12" id="map-position">      
+      <div id="listing" class="hidden-xs col-sm-3">
+          <table id="resultsTable">
+            <tbody id="results"></tbody>
+          </table>
+      </div>    
+      <div id="map" class="col-xs-12 col-sm-9"></div>
+    </div>      
+  </div>
+		
+	<div class="row">
+		<nav id="top" class="col-xs-8 col-xs-offset-2 col-sm-3 col-sm-offset-4">
+				<input type="button" id="nav-button" value="MENU">
+				<div style="width: 100%" id="nav-content" class="text-center">
+					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#about-us">
+						<i class="fa fa-briefcase"></i>
+					</button>
+					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#contact-form">
+						<i class="fa fa-envelope"></i>
+					</button>
+				</div>
+		</nav>
+	</div>
+											
+		
+	<div class="modal fade" id="about-us" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  			<div class="modal-dialog" role="document">
+    			<div class="modal-content">
+      				<div class="modal-header">
+        				<h2 class="modal-title" id="exampleModalLabel">About Us</h2>
+        				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          					<span aria-hidden="true">&times;</span>
+        				</button>
+      				</div>
+      				<div class="modal-body">
+        				<p>We are here to help You to have best holiday experience. Either You stay in massive metropolis, or in a distnat village - we'll be here to find best location to view or places to eat.
+        				So hopehully You'll have a time of your life.</p>
+      				</div>
+    			</div>
+  			</div>
+	</div>
+
+	<div class="modal fade" id="contact-form" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  			<div class="modal-dialog" role="document">
+    			<div class="modal-content">
+      				<div class="modal-header">
+        				<h2 class="modal-title" id="exampleModalLabel">About Us</h2>
+        				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          					<span aria-hidden="true">&times;</span>
+        				</button>
+      				</div>
+      				<div class="modal-body">
+        				<form onsubmit="return sendMail(this);" method="POST">
+              				<div class="form-group">
+                				<label for="username">Your name</label>
+                  					<input type="text" name="username" class="form-control" id="username" placeholder="Your name">
+              				</div>
+              				<div class="form-group">
+                				<label for="emailaddress">Email address</label>
+                  					<input type="email" name="emailaddress" class="form-control" id="emailaddress" placeholder="Email">
+              				</div>
+              				<div>
+              					<label for="subject">Subject</label>
+                  					<input type="text" name="subject" class="form-control" id="subject" placeholder="Subject">
+              				</div>
+              				<div class="form-group">
+                				<label for="content">Your comment</label>
+                  					<textarea row="4" type="text" name="content" class="form-control" id="content" placeholder="Your comment"></textarea>
+              				</div>
+              				<div class="modal-footer">
+              				    <button type="submit" class="btn btn-success">Send</button>
+                			</div>
+            			</form>
+      				</div>
+    			</div>
+  			</div>
+	</div>
+</div>
+
+    		<div style="display: none">
+      			<div id="info-content">
+        			<table>
+			          	<tr id="iw-url-row" class="iw_table_row">
+			            	<td id="iw-icon" class="iw_table_icon"></td>
+			            	<td id="iw-url"></td>
+          				</tr>
+			          	<tr id="iw-address-row" class="iw_table_row">
+			            	<td class="iw_attribute_name">Address:</td>
+			            	<td id="iw-address"></td>
+			          	</tr>
+			            <tr id="iw-phone-row" class="iw_table_row">
+			            	<td class="iw_attribute_name">Telephone:</td>
+			            	<td id="iw-phone"></td>
+			            </tr>
+			            <tr id="iw-rating-row" class="iw_table_row">
+			            	<td class="iw_attribute_name">Rating:</td>
+			            	<td id="iw-rating"></td>
+			            </tr>
+			            <tr id="iw-website-row" class="iw_table_row">
+			            	<td class="iw_attribute_name">Website:</td>
+			           		<td id="iw-website"></td>
+			            </tr>
+        			</table>
+      			</div>
+    		</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<script src="js/animation.js"></script>
+	<script src="js/sendEmail.js"></script>
+
+  	<script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+<!--    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBO9o5UiGCVuzB3s6iBuUp8mtWQsIsAQ-E&callback=initMap"></script> -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBO9o5UiGCVuzB3s6iBuUp8mtWQsIsAQ-E&libraries=places&callback=initMap">
+    </script>
+    <script> src="https://maps.googleapis.com/maps/api/place/textsearch/json?query=123+main+street&location=42.3675294,-71.186966&radius=10000&key=AIzaSyBO9o5UiGCVuzB3s6iBuUp8mtWQsIsAQ-E"</script>
+    <script src="js/map.js"></script>
+</body>
+
+</html>

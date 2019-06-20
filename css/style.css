@@ -1,0 +1,273 @@
+@import url('https://fonts.googleapis.com/css?family=Catamaran|Cinzel');
+
+html {
+	scroll-behavior: smooth;
+	overflow-x: hidden;
+}
+
+/* fonts */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: Cinzel, sans-serif;
+	font-weight: bold;
+}
+
+p {
+	font-family: Catamaran, sans-serif;
+	font-size: 12px;
+	line-height: 1.5em;
+	text-align: justify;
+}
+
+/* background */
+
+#main-background {
+  	width: 100%;
+    height: auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+    	-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+    position: fixed;
+    background-position: center;
+}
+
+#main-background > .bg-img {
+    position: absolute;
+}
+
+/* search form */
+#search-form {
+    z-index: 10;
+    position: absolute;
+    top: 10%;
+    opacity: 0.7;
+}
+
+#search-form select {
+	font-size: 22px;
+	width: 200px;
+	background-color: #ff5c33;
+	border: none;
+	color: #ff5c33;
+	font-weight: bold;
+	color: #000000;
+}
+
+
+select {
+	font-family: Catamaran, sans-serif;
+	margin-bottom: 8px;
+}
+
+input, label {
+	font-family: Catamaran, sans-serif;
+}
+
+/* navigation */
+#nav-content {
+	z-index: 30;
+	background: #ff5c33;
+	height: 80px;
+	position: absolute;
+	top: 30px;
+	opacity: 0.7;
+}
+
+#nav-content button {
+	background-color: #ff5c33;
+	font-size: 45px;
+	border: none;
+	color: #000000;
+}
+
+#nav-content button:hover {
+	color: #d9d9d9;
+}
+
+#nav-button {
+	z-index: 30;
+	width: 100%;
+	height: 30px;
+	position: absolute;
+	background-color: #ff5c33;
+	color: #000000;
+	border: none;
+	opacity: 0.7;
+	font-family: Cinzel, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#city-search {
+	width: 100%;
+	height: 30px;
+	font-size: 22px;
+	position: absolute;
+	top: 10%;
+	z-index: 10;
+}
+
+#city-search input {
+	width: 650px;
+}
+
+/* search results form */
+#map-position {
+	top: 20%;
+	position: absolute;
+	background-color: #E0E0E0;
+	width: 100%;
+	height: auto;
+	background-color: transparent;	
+}
+
+/* map settings */
+#map {
+	height: 550px;
+}
+      
+#listing {
+    overflow: hidden;
+    cursor: pointer;
+    z-index: 10;
+    height: 550px;
+}
+   
+.placeIcon {
+    width: 20px;
+    height: 34px;
+    margin: 4px;
+}
+
+.hotelIcon {
+    width: 24px;
+    height: 24px;
+}
+
+#resultsTable {
+    border-collapse: collapse;
+    min-width: 320px;
+}
+
+#results {
+	color: #d59563;
+}
+      
+#rating {
+    font-size: 13px;
+    font-family: Cinzel;
+}
+
+.iw_table_row {
+    height: 18px;
+}
+
+.iw_attribute_name {
+    font-weight: bold;
+    text-align: right;
+}
+
+.iw_table_icon {
+    text-align: right;
+}
+
+@media (max-width: 1024px) {
+	#search-form {
+    	z-index: 10;
+    	position: absolute;
+    	top: 10%;
+   		opacity: 0.7;
+	}
+
+	#search-form select {
+		font-size: 16px;
+		width: 200px;
+		background-color: #ff5c33;
+		border: none;
+		color: #ff5c33;
+		font-weight: bold;
+		color: #000000;
+	}
+
+	#city-search {
+		height: 25px;
+		font-size: 16px;
+		position: absolute;
+		top: 15%;
+		z-index: 10;
+	}	
+
+	#city-search input {
+		width: 100%;
+	}
+
+	#map-position {
+		top: 20%;
+		position: absolute;
+		background-color: #E0E0E0;
+		width: 100%;
+		height: auto;
+		background-color: transparent;	
+	}
+
+	#map {
+		height: 550px;
+	}
+}
+
+@media (max-width: 415px) {
+	#search-form {
+    	z-index: 10;
+    	position: absolute;
+    	top: 10%;
+   		opacity: 0.7;
+	}
+
+	#search-form select {
+		font-size: 16px;
+		width: 100px;
+		background-color: #ff5c33;
+		border: none;
+		color: #ff5c33;
+		font-weight: bold;
+		color: #000000;
+	}
+
+	#city-search {
+		height: 25px;
+		font-size: 16px;
+		position: absolute;
+		top: 15%;
+		z-index: 10;
+	}	
+
+	#city-search input {
+		width: 100%;
+	}
+
+	#map-position {
+		top: 20%;
+		position: absolute;
+		background-color: #E0E0E0;
+		width: 100%;
+		height: auto;
+		background-color: transparent;	
+	}
+
+	#map {
+		height: 530px;
+	}
+}
+
+@media (max-width: 360px) {
+	#map {
+		height: 450px;
+	}
+}
+
